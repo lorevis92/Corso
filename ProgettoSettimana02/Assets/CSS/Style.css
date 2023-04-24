@@ -11,22 +11,16 @@ body {
 #logo img {width: 15%;
 padding: 15px;}
 
-nav {
+#navigazione {
     background-color: #364758;
-    margin: 0;
-    
-}
-
-nav ul {
-    
-    padding: 0;
+    padding: 0.4em;
     color: white;
 }
 
-nav li {
-    margin: 0px 10px;
-    display: inline-block;
+#navigazione span{
+    margin-right: 2rem;
 }
+
 
 main {
     background-color:#E9EDEE ;
