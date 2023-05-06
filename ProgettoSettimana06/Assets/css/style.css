@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+#hero {
+    background-color: rgb(133, 58, 245);
+    padding: 0px;
+}
+
+#hero h1 {
+    color: white;
+}
+
+.p-6 {
+    padding: 50px 100px;
+}
+
+.px-6 {
+    padding: 20px 100px;
+}
+
+.bg-green {
+    background-color: rgb(62, 225, 170);
+}
+
+.text-light-grey {
+    color: rgb(162, 157, 157);
+}
+
+.profile-pic {
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.small-font {
+    font-size: smaller;
+}
