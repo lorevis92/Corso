@@ -10,6 +10,8 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class NavbarComponent implements OnInit {
   user: User[] = [];
+  indexUserById: number = 0;
+  loggedInUserId: number = Number(localStorage.getItem('id'));
 
   constructor(private authSrv: AuthService, private recuperaUtenti:UserService) { }
 
@@ -18,12 +20,16 @@ export class NavbarComponent implements OnInit {
     this.recuperaUtenti.recupera().subscribe((dato: User[]) => {
       this.user = dato;
       console.log(this.user);
+      this.indexUserById = this.user.map(e => e.id).indexOf(this.loggedInUserId);
     })
   }
 
   logout() {
     this.authSrv.logout();
 }
-
+  cancella() {
+    this.authSrv.logout();
+    this.recuperaUtenti.cancella(this.loggedInUserId);
+  }
 }
 

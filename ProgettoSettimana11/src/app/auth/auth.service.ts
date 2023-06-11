@@ -30,6 +30,7 @@ export class AuthService {
         this.utente = data;
         console.log(this.utente);
         localStorage.setItem('user', JSON.stringify(data));
+        localStorage.setItem('id', String(data.user.id));
         this.autoLogout(data);
       })
     );
@@ -54,6 +55,7 @@ export class AuthService {
   logout () {
     this.authSubj.next(null);
     localStorage.removeItem('user');
+    localStorage.removeItem('id');
     this.router.navigate(['/']);
     if(this.timeoutLogout) {
       clearTimeout(this.timeoutLogout);
