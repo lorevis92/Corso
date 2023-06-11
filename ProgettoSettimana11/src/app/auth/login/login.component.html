@@ -1,5 +1,5 @@
-<div class="container">
-  <form #form="ngForm" (ngSubmit)="accedi(form)">
+<div class="container text-center w-50">
+  <form #form="ngForm" (ngSubmit)="accedi(form)" class="mt-3 ">
       <div class="form-group">
           <label for="email">Email</label>
           <input type="email" id="email" name="email" class="form-control" required ngModel>
@@ -10,5 +10,5 @@
       </div>
       <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Accedi</button>
   </form>
-  <p>Not registered yet? press <a [routerLink]="['/registration']">here</a>!</p>
+  <p class="mt-3">Not registered yet? press <a [routerLink]="['/registration']">here</a>!</p>
 </div>

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
             this.authSrv.login(form.value).subscribe();
             this.isLoading = false;
             alert('Login effettuato!');
-            this.router.navigate(['/']);
+            this.router.navigate(['/film']);
         } catch (error) {
             this.isLoading = false;
             alert('Login sbagliato!');

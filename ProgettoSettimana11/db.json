@@ -29,6 +29,12 @@
       "password": "$2a$10$ir57T/qU1zrPHtC4BehNuuxys5XrmVQHq2wftknUjWfj/BzmUWWcG",
       "name": "Lorenzo Gabriele Visconti",
       "id": 6
+    },
+    {
+      "email": "lorenzo@lorenzo.com",
+      "password": "$2a$10$Wxh5njgyuLenlSdzKLcIYuh5QOQXCdkeHIU.Z303NmrjBvccL1U4K",
+      "name": "Lorenzo Visconti",
+      "id": 7
     }
   ],
   "favorites": [
