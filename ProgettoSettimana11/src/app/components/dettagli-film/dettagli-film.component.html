@@ -1,0 +1,10 @@
+<div *ngFor="let film of movies">
+  <div *ngIf="idLocal == film.id">
+      <div class="w-25 ">
+        <img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}" class="card-img-top" alt="{{film.title}}">
+      </div>
+      <p><b>Titolo:</b> {{film.title}}</p>
+      <p><b>Trama:</b> {{film.overview}}</p>
+      <p><b>Data di uscita:</b> {{film.release_date}}</p>
+    </div>
+</div>

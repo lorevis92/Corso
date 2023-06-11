@@ -1,0 +1,5 @@
+<div *ngFor="let film of favoriteMoviesCard" class="card d-inline-block m-3 w-25">
+  <a [routerLink]="['/dettagliFilm']" (click)="film2localStorage(film.id)">
+    <img src="http://image.tmdb.org/t/p/w500{{film.poster_path}}" class="card-img-top" alt="{{film.title}}">
+  </a>
+</div>

@@ -1,0 +1,12 @@
+.container {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(184, 184, 184, 0.8),
+      rgba(66, 73, 71, 0.8)
+    ),
+    url(http://image.tmdb.org/t/p/w500/iW03OMEI3htIAV1P8FwM867PLIj.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  top: 10rem;
+}

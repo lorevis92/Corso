@@ -1,38 +1,79 @@
-
-  <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-      <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+<div
+  class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+>
+  <ul
+    class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start fixed-top"
+    id="menu"
+  >
+    <li>
+      <a
+        [routerLink]="['/film']"
+        data-bs-toggle="collapse"
+        class="nav-link px-0 align-middle"
+      >
+        <i class="fs-4 bi-speedometer2"></i>
+        <span class="ms-1 d-none d-sm-inline text-white">Film</span>
+      </a>
+    </li>
+    <li>
+      <div class="dropdown">
+        <p class="dropdown-toggle ps-1 mb-0" data-bs-toggle="dropdown">Categories</p>
+        <ul class="dropdown-menu">
           <li>
-              <a [routerLink]="['/film']" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Film</span> </a>
-              <!--<ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
-                  <li class="w-100">
-                      <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Azione</span></a>
-                  </li>
-                  <li>
-                      <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Commedie</span></a>
-                  </li>
-              </ul>-->
+            <a [routerLink]="['/favorites']" class="dropdown-item">
+              <span class="d-none d-sm-inline">Preferiti</span></a
+            >
           </li>
           <li>
-              <a [routerLink]="['/utente']" class="nav-link px-0 align-middle">
-                  <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Utente</span></a>
+            <a [routerLink]="['/azione']" class="dropdown-item">
+              <span class="d-none d-sm-inline">Azione</span></a>
           </li>
-      </ul>
-      <hr>
-      <div class="dropdown pb-4">
-          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-              <span class="d-none d-sm-inline mx-1">{{user[indexUserById].name}}</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-              <!--<li><a class="dropdown-item" href="#">New project...</a></li>
+          <li>
+            <a [routerLink]="['/crime']" class="dropdown-item">
+              <span class="d-none d-sm-inline">Crime</span></a>
+          </li>
+          <li>
+            <a [routerLink]="['/commedia']" class="dropdown-item">
+              <span class="d-none d-sm-inline">Commedia</span></a>
+          </li>
+          <!-- Sarebbe bello far arrivare l'utenti ad una pagina generi che a seconda di quello che hai selezionato carica i film di quel genere, però non so come fare due cose: 1) tenere traccia di qualche elemento del *ngFor è stato selezionato; 2) creare la pagina dei generi non è semplicissimo, per questo creo 5 generi principali come componenti e uso questi per fare il drop down.
+            <li *ngFor="let genre of genres"><a class="dropdown-item" [routerLink]="['/favorites']">{{genre.name}}</a></li> -->
+        </ul>
+      </div>
+    </li>
+    <li>
+      <a [routerLink]="['/utente']" class="nav-link px-0 align-middle">
+        <i class="fs-4 bi-table"></i>
+        <span class="ms-1 d-none d-sm-inline text-light">Utente</span></a
+      >
+    </li>
+  </ul>
+  <hr />
+  <div class="dropdown pb-4 fixed-bottom">
+    <a
+      href="#"
+      class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+      id="dropdownUser1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <span class="d-none d-sm-inline mx-1">{{
+        user[indexUserById].name
+      }}</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+      <!--<li><a class="dropdown-item" href="#">New project...</a></li>
               <li><a class="dropdown-item" href="#">Settings</a></li>
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li>
                   <hr class="dropdown-divider">
               </li> -->
-              <li><a class="dropdown-item" (click)="logout()">Sign out</a></li>
-              <li><a [routerLink]="['/login']" class="dropdown-item" (click)="cancella()">Elimina account</a></li>
-          </ul>
-      </div>
+      <li><a class="dropdown-item" (click)="logout()">Sign out</a></li>
+      <li>
+        <a [routerLink]="['/login']" class="dropdown-item" (click)="cancella()"
+          >Elimina account</a
+        >
+      </li>
+    </ul>
   </div>
-
+</div>
