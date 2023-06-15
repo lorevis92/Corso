@@ -9,6 +9,9 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 
 export class AppComponent implements OnInit {
+    title(title: any) {
+      throw new Error('Method not implemented.');
+    }
 
     user!: AuthData | null;
 
@@ -22,5 +25,9 @@ export class AppComponent implements OnInit {
 
     logout() {
         this.authSrv.logout();
+    }
+
+    restore(){
+      this.authSrv.restore();
     }
 }

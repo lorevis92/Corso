@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { JwtHelperService } from '@auth0/angular-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt'; // serve per la gestione del Token
 import { tap } from 'rxjs/operators';
 import { AuthData } from './auth-data.interface'; // devo impostare io l'interface in maniera tale che sia fatta su misura per il User nell'Api che utilizzo
 import { environment } from 'src/environments/environment';
-import {Router} from '@angular/router';
+import {Router} from '@angular/router'
+import { User } from '../models/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -49,9 +50,13 @@ export class AuthService {
     this.autoLogout(userData);
   }
 
-  signup (data: {name:string; mail: string; password: string}) {
+  signup (data: {name:string, mail: string, password: string}) {
     return this.http.post(`${this.baseURL}register`, data) //devo inserire i data in maniera tale che sia in accordo con lo User nella API: per esempio noi abbiamo solo name, nella lezione invece c'era nome:string e cognome:string
   }
+  newUser(newUser: Partial<User>){
+    return this.http.post<User>('http://localhost:4201/users', newUser);
+  }
+
   logout () {
     this.authSubj.next(null);
     localStorage.removeItem('user');

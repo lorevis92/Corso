@@ -1,0 +1,13 @@
+<div class=" container ">
+    <div *ngFor="let pubblicazione of post" class="text-center bg-light border rounded p-3 m-5">
+            <h5 class="card-title">{{pubblicazione.title}}</h5>
+            <p class="card-text">{{pubblicazione.body}}</p>
+            <div>
+              <a [routerLink]="['/utente']" class=" m-2 text-decoration-none text-dark" (click)="updateUserIdLocalStorage(pubblicazione.userId)"><b>Post pubblicato dall'utente con id:</b> {{pubblicazione.userId}}</a>
+            </div>
+            <a href="#" class="btn btn-primary m-2">Modifica</a>
+            <button class="btn btn-primary m-2" (click)="cancellaPost(pubblicazione.userId)">Cancella</button>
+          </div>
+</div>
+
+

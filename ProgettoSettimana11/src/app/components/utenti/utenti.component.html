@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h1>utenti</h1>
+      <ul>
+        <li *ngFor="let utente of user" class="list-unstyled">
+          <p>Nome: {{utente.name}} <br></p>
+          <button type="button" id="elimina" name="elimina" class="btn btn-danger btn-lg" (click)="cancellaUtente(utente.id)">cancella utente</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
     accedi(form: NgForm) {
         this.isLoading = true;
-        //console.log(form.value);
+        console.log(form.value);
         try {
             this.authSrv.login(form.value).subscribe();
             this.isLoading = false;
@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
             this.isLoading = false;
             alert('Login sbagliato!');
             console.error(error);
+            this.router.navigate(['/login']);
         }
     }
 }

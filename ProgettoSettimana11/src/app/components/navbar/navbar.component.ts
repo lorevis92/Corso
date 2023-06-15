@@ -36,8 +36,13 @@ export class NavbarComponent implements OnInit {
     this.authSrv.logout();
 }
   cancella() {
-    this.authSrv.logout();
-    this.recuperaUtenti.cancella(this.loggedInUserId);
-  }
+    //this.authSrv.logout();
+    this.recuperaUtenti.cancella(this.loggedInUserId).subscribe(() => {
+      this.user = this.user.filter((utente) => utente.id != this.loggedInUserId);
+
+  });
 }
+
+  }
+
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -9,19 +9,26 @@ import { MovieComponent } from './components/movie/movie.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
 import { UserComponent } from './components/user/user.component';
-//import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { AzioneComponent } from './components/generi/azione/azione.component';
 import { CrimeComponent } from './components/generi/crime/crime.component';
 import { CommediaComponent } from './components/generi/commedia/commedia.component';
 import { DettagliFilmComponent } from './components/dettagli-film/dettagli-film.component';
+import { UtentiComponent } from './components/utenti/utenti.component';
+import { TokenInterceptor } from './auth/token.interceptor';
 
 const routes: Route[] = [
     {
         path: '',
-        component: AppComponent//,
-        //canActivate: [AuthGuard]
+        component: AppComponent,
+        canActivate: [AuthGuard]
     },
+    {
+      path: 'utenti',
+      component: UtentiComponent,
+      canActivate: [AuthGuard]
+  },
     {
       path: 'dettagliFilm',
       component: DettagliFilmComponent//,
@@ -46,8 +53,8 @@ const routes: Route[] = [
     },
     {
         path: 'film',
-        component: MovieComponent//,
-        //canActivate: [AuthGuard]
+        component: MovieComponent,
+        canActivate: [AuthGuard]
 
     },
     {
@@ -85,6 +92,7 @@ const routes: Route[] = [
     CrimeComponent,
     CommediaComponent,
     DettagliFilmComponent,
+    UtentiComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +100,11 @@ const routes: Route[] = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
