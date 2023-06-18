@@ -1,1 +1,12 @@
-<p>completati works!</p>
+<div class="text-center mt-3">
+  <h1>Complited tasks</h1>
+  <ul class="list-group">
+    <li *ngFor="let todos of todo" class="mt-3">
+      <div *ngIf="todos.complited == true">
+        {{todos.title}}
+      <div class="mt-3">
+        <button type="button" class="d-inline btn b-0 bg-light" (click)="cancellaTodo(todos.id)">Remove from todos ❌</button>
+      </div>
+      </div>
+    </li>
+  </ul>

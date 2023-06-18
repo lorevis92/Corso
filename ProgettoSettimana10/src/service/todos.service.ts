@@ -10,15 +10,13 @@ export class TodosService {
   constructor() { }
 
   recuperaTodo() {
-    return this.todo = [];
+    this.todo = JSON.parse(String(localStorage.getItem('task')))
+    return this.todo;
   }
 
   aggiornaTodo(data: Partial<Todo>, id: number){
     this.todo = this.todo.map((element) =>
             element.id == id ? { ...element, ...data } : element
         );
-  }
-  aggiungiTodo(todos:string) {
-    this.todo.push({title:todos, complited:false})
   }
 }
