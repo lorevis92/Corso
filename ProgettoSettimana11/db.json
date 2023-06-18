@@ -35,44 +35,15 @@
       "password": "$2a$10$Wxh5njgyuLenlSdzKLcIYuh5QOQXCdkeHIU.Z303NmrjBvccL1U4K",
       "name": "Lorenzo Visconti",
       "id": 7
+    },
+    {
+      "email": "marghe@marghe.com",
+      "password": "$2a$10$hyGWJLiNastRYKVwps3ucerReWdABECaYKBnHT9e5ChCXhOxtR05G",
+      "name": "marghe",
+      "id": 8
     }
   ],
   "favorites": [
-    {
-      "movieId": 578701,
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "userId": 1,
-      "movieId": 460465,
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "movieId": 460465,
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "movieId": 632357,
-      "id": 8
-    },
-    {
-      "userId": 3,
-      "movieId": 804435,
-      "id": 9
-    },
-    {
-      "userId": 3,
-      "movieId": 399566,
-      "id": 10
-    },
-    {
-      "userId": 5,
-      "movieId": 399566,
-      "id": 13
-    },
     {
       "userId": 5,
       "movieId": 635302,
@@ -84,9 +55,24 @@
       "id": 15
     },
     {
-      "userId": 5,
+      "userId": 8,
       "movieId": 460465,
-      "id": 16
+      "id": 26
+    },
+    {
+      "userId": 8,
+      "movieId": 460465,
+      "id": 27
+    },
+    {
+      "userId": 7,
+      "movieId": 578701,
+      "id": 30
+    },
+    {
+      "userId": 7,
+      "movieId": 460465,
+      "id": 31
     }
   ],
   "genres": [

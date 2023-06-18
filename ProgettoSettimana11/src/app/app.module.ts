@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { LoginComponent } from './auth/login/login.component';
-import { RegistrationComponent } from './auth/registration/registration.component';
 import { UserComponent } from './components/user/user.component';
 import { AuthGuard } from './auth/auth.guard';
 import { FavoritesComponent } from './components/favorites/favorites.component';
@@ -15,8 +14,8 @@ import { AzioneComponent } from './components/generi/azione/azione.component';
 import { CrimeComponent } from './components/generi/crime/crime.component';
 import { CommediaComponent } from './components/generi/commedia/commedia.component';
 import { DettagliFilmComponent } from './components/dettagli-film/dettagli-film.component';
-import { UtentiComponent } from './components/utenti/utenti.component';
 import { TokenInterceptor } from './auth/token.interceptor';
+import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Route[] = [
     {
@@ -25,30 +24,25 @@ const routes: Route[] = [
         canActivate: [AuthGuard]
     },
     {
-      path: 'utenti',
-      component: UtentiComponent,
-      canActivate: [AuthGuard]
-  },
-    {
       path: 'dettagliFilm',
-      component: DettagliFilmComponent//,
-      //canActivate: [AuthGuard]
+      component: DettagliFilmComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'azione',
-      component: AzioneComponent//,
-      //canActivate: [AuthGuard]
+      component: AzioneComponent,
+      canActivate: [AuthGuard]
     },
     {
       path: 'crime',
-      component: CrimeComponent//,
-      //canActivate: [AuthGuard]
+      component: CrimeComponent,
+      canActivate: [AuthGuard]
 
     },
     {
       path: 'commedia',
-      component: CommediaComponent//,
-      //canActivate: [AuthGuard]
+      component: CommediaComponent,
+      canActivate: [AuthGuard]
 
     },
     {
@@ -59,8 +53,8 @@ const routes: Route[] = [
     },
     {
         path: 'utente',
-        component: UserComponent//,
-        //canActivate: [AuthGuard]
+        component: UserComponent,
+        canActivate: [AuthGuard]
 
     },
     {
@@ -68,13 +62,13 @@ const routes: Route[] = [
         component: LoginComponent
     },
     {
-        path: 'registration',
-        component: RegistrationComponent
+      path: 'register',
+      component: RegisterComponent
     },
     {
       path: 'favorites',
-      component: FavoritesComponent//,
-      //canActivate: [AuthGuard]
+      component: FavoritesComponent,
+      canActivate: [AuthGuard]
 
   }
 ];
@@ -85,14 +79,13 @@ const routes: Route[] = [
     NavbarComponent,
     MovieComponent,
     LoginComponent,
-    RegistrationComponent,
     UserComponent,
     FavoritesComponent,
     AzioneComponent,
     CrimeComponent,
     CommediaComponent,
     DettagliFilmComponent,
-    UtentiComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

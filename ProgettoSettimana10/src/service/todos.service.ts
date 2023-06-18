@@ -9,6 +9,10 @@ export class TodosService {
 
   constructor() { }
 
+  recuperaTodo() {
+    return this.todo = [];
+  }
+
   aggiornaTodo(data: Partial<Todo>, id: number){
     this.todo = this.todo.map((element) =>
             element.id == id ? { ...element, ...data } : element

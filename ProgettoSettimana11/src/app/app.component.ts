@@ -21,13 +21,10 @@ export class AppComponent implements OnInit {
         this.authSrv.user$.subscribe((_user) => {
             this.user = _user;
         });
+        this.authSrv.restore();
     }
 
     logout() {
         this.authSrv.logout();
-    }
-
-    restore(){
-      this.authSrv.restore();
     }
 }

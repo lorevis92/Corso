@@ -1,5 +1,5 @@
-<div
-  class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+<nav
+  class="collapse d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
 >
   <ul
     class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start fixed-top"
@@ -47,18 +47,6 @@
         <span class="ms-1 d-none d-sm-inline text-light">Utente</span></a
       >
     </li>
-    <li>
-      <a [routerLink]="['/utenti']" class="nav-link px-0 align-middle">
-        <i class="fs-4 bi-table"></i>
-        <span class="ms-1 d-none d-sm-inline text-light">Utenti</span></a
-      >
-    </li>
-    <li>
-      <a [routerLink]="['/registration']" class="nav-link px-0 align-middle">
-        <i class="fs-4 bi-table"></i>
-        <span class="ms-1 d-none d-sm-inline text-light">Registrazione</span></a
-      >
-    </li>
   </ul>
   <hr />
   <div class="dropdown pb-4 fixed-bottom">
@@ -81,11 +69,7 @@
                   <hr class="dropdown-divider">
               </li> -->
       <li><a class="dropdown-item" (click)="logout()">Sign out</a></li>
-      <li>
-        <a [routerLink]="['/login']" class="dropdown-item" (click)="cancella()"
-          >Elimina account</a
-        >
-      </li>
     </ul>
   </div>
-</div>
+</nav>
+

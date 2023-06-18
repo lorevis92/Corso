@@ -41,4 +41,42 @@ export class CrimeComponent implements OnInit {
   film2localStorage(id: number | undefined){
     localStorage.setItem("filmId", String(id))
   }
+  aggiungiFavorito(idFilm: number | undefined): void {
+    const favorito: Favorites = {
+        userId: this.loggedInUserId,
+        movieId: idFilm,
+    };
+    this.moviesService.aggiungiFavorito(favorito).subscribe(() => {
+      this.favoriteSrv.recupera().subscribe((favoriti: Favorites[]) => {
+        this.favorites = favoriti;
+
+        console.log(this.favorites);
+        this.usersFavorites = this.favorites.filter(fav => fav.userId == this.loggedInUserId),
+        this.usersFavoritesMovies = this.usersFavorites.map(e => e?.movieId);
+        console.log(this.usersFavoritesMovies);
+      }
+  );
+})}
+
+  eliminaFavorito(filmId: number | undefined): void {
+    const idFav = this.getIdFavorito(filmId);
+    if (idFav) {
+        this.moviesService.rimuoviFavorito(idFav).subscribe(() => {
+          this.favoriteSrv.recupera().subscribe((favoriti: Favorites[]) => {
+            this.favorites = favoriti;
+
+            console.log(this.favorites);
+            this.usersFavorites = this.favorites.filter(fav => fav.userId == this.loggedInUserId),
+            this.usersFavoritesMovies = this.usersFavorites.map(e => e?.movieId);
+            console.log(this.usersFavoritesMovies);
+          }
+      );
+    });
+    }
+  }
+
+  getIdFavorito(filmId: number | undefined): number | undefined {
+    const favorito = this.favorites.find((f) => f.movieId === filmId);
+    return favorito?.id;
+}
 }

@@ -16,7 +16,4 @@ export class UserService {
   newUser(newUser: Partial<User>){
     return this.http.post<User>('http://localhost:4201/users', newUser);
   }
-  cancella (id: number){
-    return this.http.delete(`http://localhost:4201/user/${id}`);
-  }
 }

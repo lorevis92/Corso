@@ -5,7 +5,7 @@
             <div>
               <a [routerLink]="['/utente']" class=" m-2 text-decoration-none text-dark" (click)="updateUserIdLocalStorage(pubblicazione.userId)"><b>Post pubblicato dall'utente con id:</b> {{pubblicazione.userId}}</a>
             </div>
-            <a href="#" class="btn btn-primary m-2">Modifica</a>
+            <a [routerLink]="['/post']" class="btn btn-primary m-2">Dettagli</a>
             <button class="btn btn-primary m-2" (click)="cancellaPost(pubblicazione.userId)">Cancella</button>
           </div>
 </div>

@@ -53,15 +53,12 @@ export class AuthService {
   signup (data: {name:string, mail: string, password: string}) {
     return this.http.post(`${this.baseURL}register`, data) //devo inserire i data in maniera tale che sia in accordo con lo User nella API: per esempio noi abbiamo solo name, nella lezione invece c'era nome:string e cognome:string
   }
-  newUser(newUser: Partial<User>){
-    return this.http.post<User>('http://localhost:4201/users', newUser);
-  }
 
   logout () {
     this.authSubj.next(null);
     localStorage.removeItem('user');
     localStorage.removeItem('id');
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
     if(this.timeoutLogout) {
       clearTimeout(this.timeoutLogout);
     }

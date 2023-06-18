@@ -8,5 +8,8 @@
     </div>
   </div>
 </div>
-<app-login *ngIf="!user"></app-login>
+<div *ngIf="!user" class="log">
+  <router-outlet></router-outlet>
+</div>
+
 
