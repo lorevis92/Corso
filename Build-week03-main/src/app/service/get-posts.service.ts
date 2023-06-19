@@ -17,4 +17,7 @@ export class GetPostsService {
   cancella (id: number){
     return this.http.delete(`${this.baseUrl}${id}`);
   }
+  recuperaById (id: number){
+    return this.http.get<Posts[]>(`${this.baseUrl}posts?id=${id}`)
+  }
 }

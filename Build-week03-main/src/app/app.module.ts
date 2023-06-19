@@ -3,11 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Route, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './modules/home/home.component';
 import { UtenteComponent } from './modules/utente/utente.component';
 import { PostComponent } from './modules/post/post.component';
 import { NavbarComponent } from './modules/navbar/navbar.component';
+import { CommentsComponent } from './modules/comments/comments.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 const routes: Route[] = [
   {
@@ -19,8 +22,13 @@ const routes: Route[] = [
     component: UtenteComponent
   },
   {
-    path: 'post',
-    component: PostComponent
+    path: ':id',
+    component: PostComponent,
+    children: [
+      {
+        path: ':id',
+        component: CommentsComponent
+      }]
   }
 ]
 
@@ -30,7 +38,9 @@ const routes: Route[] = [
     HomeComponent,
     UtenteComponent,
     PostComponent,
-    NavbarComponent
+    NavbarComponent,
+    CommentsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,6 @@ const routes: Route[] = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

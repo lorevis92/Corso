@@ -17,6 +17,7 @@ import { DettagliFilmComponent } from './components/dettagli-film/dettagli-film.
 import { TokenInterceptor } from './auth/token.interceptor';
 import { RegisterComponent } from './auth/register/register.component';
 
+
 const routes: Route[] = [
     {
         path: '',

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card bg-light mt-5" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title text-start">{{post[0].title}}</h5>
+      <h6 class="card-subtitle m-2 ms-0 text-body-secondary text-start">
+        <a [routerLink]="['/utente']" class="text-decoration-none text-secondary">Post by <b>{{user[0].name}}</b></a>
+      </h6>
+      <p class="card-text text-start">{{post[0].body}}</p>
+      <div *ngIf="vediCommenti">
+        <a [routerLink]="[post[0].id]" class="btn btn-primary m-2" (click)="visualizzaCommenti()">Visualizza commenti</a>
+        <a href="#" class=" btn btn-light card-link">Add comment</a>
+      </div>
+      <div *ngIf="!vediCommenti">
+        <a [routerLink]="[post[0].id]" class="btn btn-danger m-2" (click)="visualizzaCommenti()">Nasconti commenti</a>
+        <a href="#" class=" btn btn-light card-link">Add comment</a>
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

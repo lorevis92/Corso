@@ -14,4 +14,10 @@ export class GetUsersService {
   recupera (){
     return this.http.get<Users[]>(`${this.baseUrl}users`)
   }
+  recuperaById (id:number){
+    return this.http.get<Users[]>(`${this.baseUrl}users?id=${id}`)
+  }
+  recuperaByMail (mail:string){
+    return this.http.get<Users[]>(`${this.baseUrl}users?email=${mail}`)
+  }
 }

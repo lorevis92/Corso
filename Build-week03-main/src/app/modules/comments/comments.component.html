@@ -1,0 +1,5 @@
+<div class="bg-primary text-light rounded-pill p-3 m-3" *ngFor="let comment of comments">
+  {{comment.name}}
+  <p class="text-small">by <a [routerLink]="['/utente']" class="text-decoration-none text-white"><b>{{comment.email}}</b></a></p>
+</div>
+

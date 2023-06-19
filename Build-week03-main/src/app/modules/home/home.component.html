@@ -1,13 +1,13 @@
 <div class=" container ">
     <div *ngFor="let pubblicazione of post" class="text-center bg-light border rounded p-3 m-5">
-            <h5 class="card-title">{{pubblicazione.title}}</h5>
-            <p class="card-text">{{pubblicazione.body}}</p>
-            <div>
-              <a [routerLink]="['/utente']" class=" m-2 text-decoration-none text-dark" (click)="updateUserIdLocalStorage(pubblicazione.userId)"><b>Post pubblicato dall'utente con id:</b> {{pubblicazione.userId}}</a>
-            </div>
-            <a [routerLink]="['/post']" class="btn btn-primary m-2">Dettagli</a>
-            <button class="btn btn-primary m-2" (click)="cancellaPost(pubblicazione.userId)">Cancella</button>
+            <h5 class="card-title text-start">{{pubblicazione.title}}</h5>
+            <hr>
+            <p class="card-text text-start">{{post[0].body}}</p>
+
+            <a [routerLink]="[pubblicazione.id]" class="btn btn-primary m-2" (click)="updateUserIdLocalStorage(pubblicazione.userId)">Dettagli post</a>
           </div>
 </div>
+
+
 
 
